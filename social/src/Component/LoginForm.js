@@ -3,8 +3,9 @@ import React from 'react';
 const LoginForm = () => {
   return (
     <div className="login-box">
-      <h2>Register User</h2>
+      
       <form>
+      <legend>Sing In</legend>
         <input type="text" placeholder="Username" className="input-field" />
         <input type="password" placeholder="Password" className="input-field" />
         <button type="submit" className="submit-btn">Sign In</button>
