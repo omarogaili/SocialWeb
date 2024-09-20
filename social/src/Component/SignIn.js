@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // Make sure you have installed react-icons
-
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 const SignInComponent = () => {
   const [showPassword, setShowPassword] = useState(false);
 
