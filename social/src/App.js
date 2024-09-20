@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './Component/header';
-import LoginForm from './Component/LoginForm'
+import SignInComponent from './Component/SignIn'
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="login-container">
-        <LoginForm />
+        <SignInComponent />
       </div>
     </div>
   );
