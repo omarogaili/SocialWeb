@@ -5,7 +5,7 @@ const SignInComponent = () => {
     <div className="login-box">
       
       <form>
-      <legend>Sing In</legend>
+      <legend>Sign In</legend>
         <input type="text" placeholder="Username" className="input-field" />
         <input type="password" placeholder="Password" className="input-field" />
         <button type="submit" className="submit-btn">Sign In</button>
