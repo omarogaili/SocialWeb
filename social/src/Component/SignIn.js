@@ -11,7 +11,9 @@ const SignInComponent = () => {
   return (
     <div className="login-box">
       <form>
+
         <legend>Sign In</legend>
+
         <input type="text" placeholder="Username" className="input-field" />
 
         <div className="password-container">
