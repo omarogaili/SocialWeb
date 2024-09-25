@@ -10,9 +10,11 @@ namespace backend
 {
     public interface IUserService
     {
-        public User GetUserById(int id);
+        public User GetUserById(string email);
         public Task<User> AddUser(User user);
         public void UpdateUser(User user);
         public void DeleteUser(int id);
+        public Task<List<User>> GetAllUsers();
+        public int? SignInQuery(string username, string password);
     }
 } 
