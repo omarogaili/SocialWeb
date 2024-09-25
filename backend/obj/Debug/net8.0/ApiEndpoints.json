@@ -1,0 +1,105 @@
+[
+  {
+    "ContainingType": "Endpoints.UserEndpoints",
+    "Method": "SignInAsync",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Endpoints.UserEndpoints\u002BSignInRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "user"
+    ],
+    "Summary": "User sign in"
+  },
+  {
+    "ContainingType": "Endpoints.UserEndpoints",
+    "Method": "CreateNewUserAsync",
+    "RelativePath": "api/Signup",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Endpoints.UserEndpoints\u002BCreateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "user"
+    ],
+    "Summary": "Successfully created a new user"
+  },
+  {
+    "ContainingType": "Endpoints.UserEndpoints",
+    "Method": "GetAllUsersAsync",
+    "RelativePath": "api/user",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "user"
+    ],
+    "Summary": "Get all users"
+  },
+  {
+    "ContainingType": "Endpoints.UserEndpoints",
+    "Method": "GetUserByTheId",
+    "RelativePath": "user/id",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "user"
+    ],
+    "Summary": "Get user by id"
+  }
+]
