@@ -1,4 +1,5 @@
 import React from 'react';
+import Users from './username';
 
 const SignInComponent = () => {
   return (
@@ -6,11 +7,12 @@ const SignInComponent = () => {
       
       <form>
       <legend>Sign In</legend>
-        <input type="text" placeholder="Username" className="input-field" />
+        <input type="text" placeholder="Email" className="input-field" />
         <input type="password" placeholder="Password" className="input-field" />
         <button type="submit" className="submit-btn">Sign In</button>
         <div className="forgot-password">
           <a href="/">Forgot my Password</a>
+          <Users/>
         </div>
       </form>
       <p>Sign up with</p>
