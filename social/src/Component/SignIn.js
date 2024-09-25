@@ -1,6 +1,3 @@
-import React from 'react';
-import Users from './username';
-
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 const SignInComponent = () => {
@@ -14,17 +11,8 @@ const SignInComponent = () => {
   return (
     <div className="login-box">
       <form>
-
-      <legend>Sign In</legend>
-        <input type="text" placeholder="Email" className="input-field" />
-        <input type="password" placeholder="Password" className="input-field" />
-        <button type="submit" className="submit-btn">Sign In</button>
-
-
         <legend>Sign In</legend>
-
         <input type="text" placeholder="Username" className="input-field" />
-
         <div className="password-container">
           <input
             type={showPassword ? "text" : "password"}
@@ -38,13 +26,11 @@ const SignInComponent = () => {
             {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
-
         <button type="submit" className="submit-btn">
           Sign In
         </button>
         <div className="forgot-password">
           <a href="/">Forgot my Password</a>
-          <Users/>
         </div>
       </form>
       <p>Sign up with</p>

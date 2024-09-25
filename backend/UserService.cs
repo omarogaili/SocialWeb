@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using System.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 namespace backend
 {
@@ -11,14 +13,16 @@ namespace backend
     {
         private readonly AppDbContext _context;
         private readonly PasswordHasher<User> _hashAlgorithm;
-        public UserService(AppDbContext context)
+        private readonly string _conectionString;
+        public UserService(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
             _hashAlgorithm = new PasswordHasher<User>();
+            _conectionString = configuration.GetConnectionString("DefaultConnection");
         }
         public User GetUserById(string userEmail)
         {
-            using (var connection= new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=King@lion10!;"))
+            using (var connection= new MySqlConnection(_conectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM Users WHERE Email = @email";
@@ -73,7 +77,7 @@ namespace backend
         }
         public int? SignInQuery(string userEmail, string password)
         {
-            using (var connection = new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=King@lion10!;"))
+            using (var connection = new MySqlConnection(_conectionString))
             {
                 string query = "SELECT Id, Password FROM Users WHERE Email = @name";
                 using (var command = new MySqlCommand(query, connection))
