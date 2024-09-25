@@ -18,7 +18,7 @@ namespace backend
         }
         public User GetUserById(string userEmail)
         {
-            using (var connection= new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=omarogaili20181109;"))
+            using (var connection= new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=King@lion10!;"))
             {
                 connection.Open();
                 string query = "SELECT * FROM Users WHERE Email = @email";
@@ -73,7 +73,7 @@ namespace backend
         }
         public int? SignInQuery(string userEmail, string password)
         {
-            using (var connection = new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=omarogaili20181109;"))
+            using (var connection = new MySqlConnection("Server=localhost;Database=vibeNest;User=root;Password=King@lion10!;"))
             {
                 string query = "SELECT Id, Password FROM Users WHERE Email = @name";
                 using (var command = new MySqlCommand(query, connection))
