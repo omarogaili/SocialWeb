@@ -1,10 +1,11 @@
 /* General styles */
-html , body , #root {
+html, body, #root {
   width: 100%;
   display: flex;
   justify-content: center;
-
+  background-color: #282c34;
 }
+
 .App {
   text-align: center;
   width: 100%;
@@ -38,7 +39,7 @@ html , body , #root {
 }
 
 .login-box {
-  background-color: #12462b;
+  background-color: #094928;
   padding: 40px;
   border-radius: 8px;
   color: white;
@@ -55,6 +56,28 @@ html , body , #root {
   margin: 10px 0;
   border: none;
   border-radius: 7px;
+  box-sizing: border-box; /* Ensures padding is included in the element's width */
+}
+
+/* Password Input Container */
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input {
+  width: 100%;
+  padding-right: 40px; /* Add some padding to make space for the eye icon */
+  box-sizing: border-box; /* Ensures padding is included in the element's width */
+}
+
+.password-toggle-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #333;
 }
 
 .submit-btn {
@@ -72,14 +95,13 @@ html , body , #root {
 }
 
 .forgot-password a {
-  color: white; 
-  text-decoration: none; 
+  color: white;
+  text-decoration: none;
 }
 
 .forgot-password a:hover {
-  color: rgb(1, 2, 15); 
+  color: rgb(1, 2, 15);
 }
-
 
 .social-login {
   display: flex;
