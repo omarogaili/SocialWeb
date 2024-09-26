@@ -19,7 +19,7 @@ internal class Program
         });
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("AllowAllOrigins", builder =>
+            options.AddPolicy("AllowReactApp", builder =>
             {
                 builder.AllowAnyOrigin()
                         .AllowAnyMethod()
@@ -38,7 +38,7 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        app.UseCors("AllowAllOrigins");
+        app.UseCors("AllowReactApp");
         app.UseHttpsRedirection();
         app.UseRouting();
         app.MapUserEndpoints();

@@ -1,4 +1,4 @@
 {
     "apiurl_users": "https://localhost:7168/api/user",
-    "apiurl_signin": "https://localhost:7168/api/api/login"
+    "apiurl_signin": "https://localhost:7168/api/login"
 }
