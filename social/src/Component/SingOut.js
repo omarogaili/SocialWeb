@@ -3,7 +3,7 @@ export default function Signout() {
     const navigate = useNavigate();
     const handleSignout = () => {
         localStorage.removeItem('userId');
-        navigate('/Sing-In');
+        navigate('/');
     };
     return (
         <button onClick={handleSignout}>Sign out</button>

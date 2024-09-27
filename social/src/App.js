@@ -4,6 +4,7 @@ import Header from './Component/header';
 import SignInComponent from './Component/SignIn'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./Component/dashboard";
+import SignUp from './Component/SingUp';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
         <Header />
         <div className="login-container">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/Sing-In" element={<SignInComponent />} />
+            <Route path="/VibeNest" element={<Dashboard />} />
+            <Route path="/" element={<SignInComponent />} />
+          <Route path="/Sing-Up" element={<SignUp />} />
           </Routes>
         </div>
       </div>

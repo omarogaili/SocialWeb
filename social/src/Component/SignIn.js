@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import ApiConfig from './ApiurlConfig';
+import SignUp from './SingUp';
 const SignInComponent = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -13,23 +15,12 @@ const SignInComponent = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-  const [apiUrl, setApiUrl] = useState('');
-  useEffect(() => {
-    const fetchConfig = async () => {
-      const response = await fetch('/config.json');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      setApiUrl(data.apiurl_signin);
-    }
-    fetchConfig();
-  });
+  const apiUrl= ApiConfig();
   const postData = async (e) => {
     e.preventDefault();
     setErrorMessage('');
     try {
-      const response = await fetch(`${apiUrl}`, {
+      const response = await fetch(apiUrl.apiurl_signin, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +38,7 @@ const SignInComponent = () => {
         setId(data.userId);
         localStorage.setItem('userId', data.userId);
         console.log(data.userId);
-        navigate('/dashboard', {state:{userId: data.userId, userName: data.userName }});
+        navigate('/VibeNest', {state:{userId: data.userId, userName: data.userName }});
         }else if(!data.success){
           setErrorMessage(data.message);
         }
@@ -61,7 +52,7 @@ const SignInComponent = () => {
     const storedUserId= localStorage.getItem('userId');
     if(storedUserId){
       setId(storedUserId);
-      navigate('/dashboard', {state:{userId: storedUserId}});
+      navigate('/VibeNest', {state:{userId: storedUserId}});
     }
   })
   return (
@@ -95,6 +86,7 @@ const SignInComponent = () => {
         <div className="forgot-password">
           <a href="/">Forgot my Password</a>
         </div>
+          <Link to='/Sing-Up'>Create an account</Link>
       </form>
       <p>Sign up with</p>
       <div className="social-login">
