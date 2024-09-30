@@ -11,8 +11,8 @@ using backend;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240930123521_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240930182646_Comments")]
+    partial class Comments
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

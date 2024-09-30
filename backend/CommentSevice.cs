@@ -1,4 +1,6 @@
-﻿namespace backend
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace backend
 {
     public class CommentSevice :ICommentsServices
     {
@@ -19,6 +21,10 @@
             _context.UserComments.Add(comment);
             await _context.SaveChangesAsync();
             return comment;
+        }
+        public Task<List<UserComment>> GetComment()
+        {
+            return _context.UserComments.ToListAsync();
         }
     }
 }

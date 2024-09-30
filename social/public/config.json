@@ -1,5 +1,7 @@
 {
     "apiurl_users": "https://localhost:7168/api/user",
     "apiurl_signin": "https://localhost:7168/api/login",
-    "apiurl_signup": "https://localhost:7168/api/Signup"
+    "apiurl_signup": "https://localhost:7168/api/Signup",
+    "apiurl_comments": "https://localhost:7168/api/comments",
+    "apiurl_getcomments": "https://localhost:7168/api/getcomments"
 }
