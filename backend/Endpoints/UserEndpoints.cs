@@ -34,7 +34,7 @@ public static class UserEndpoints
     public record SignInRequest(string userEmail, string userPassword);
     static async Task<IResult> CreateNewUserAsync(CreateUserRequest request, IUserService userService)
     {
-        var user = new User { Name = request.userName, Email = request.userEmail, Password = request.userPassword};
+        var user = new User { Name = request.userName, Email = request.userEmail, Password = request.userPassword };
         await userService.AddUser(user);
         return Results.Created($"/User/{user.Name}", new UserResponse(user.Id, user.Name, user.Email));
     }
@@ -48,20 +48,19 @@ public static class UserEndpoints
         var users = await userService.GetAllUsers();
         return Results.Ok(users.Select(u => new UserResponse(u.Id, u.Name, u.Email)));
     }
-static async Task<IResult> SignInAsync(SignInRequest request, IUserService userService)
-{
-    var user = userService.SignInQuery(request.userEmail, request.userPassword);
-    Console.WriteLine($"SignInQuery result for {request.userEmail}: {user.HasValue}");
-    if (user.HasValue)
+    static async Task<IResult> SignInAsync(SignInRequest request, IUserService userService)
     {
-        var userinfo = userService.GetUserById(request.userEmail);
-        return Results.Ok(new UserResponse(user.Value, userinfo.Name, request.userEmail));
+        var user = userService.SignInQuery(request.userEmail, request.userPassword);
+        Console.WriteLine($"SignInQuery result for {request.userEmail}: {user.HasValue}");
+        if (user.HasValue)
+        {
+            var userinfo = userService.GetUserById(request.userEmail);
+            return Results.Ok(new UserResponse(user.Value, userinfo.Name, request.userEmail));
+        }
+        else
+        {
+            Console.WriteLine("Unauthorized: Invalid email or password");
+            return Results.Unauthorized();
+        }
     }
-    else
-    {
-        Console.WriteLine("Unauthorized: Invalid email or password");
-        return Results.Unauthorized();
-    }
-}
-
 }

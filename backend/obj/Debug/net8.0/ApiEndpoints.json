@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "backend.Endpoints.CommentsEndpoints",
+    "Method": "CreateComment",
+    "RelativePath": "api/comments",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "backend.Endpoints.CommentsEndpoints\u002BCreateCommentRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "comments"
+    ],
+    "Summary": "Successfully created a new user"
+  },
+  {
     "ContainingType": "Endpoints.UserEndpoints",
     "Method": "SignInAsync",
     "RelativePath": "api/login",
