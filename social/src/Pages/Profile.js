@@ -1,11 +1,12 @@
 import React from "react";
 import Comment from '../Component/comment'
+import Account from '../Component/username';
+import Navbar from "../Component/UserNav";
 export default function Profile(){
     return (
         <div>
-            <h1>Profile Page</h1>
+            <Account />
             <Comment />
-            <p>This is the profile page</p>
         </div>
     );
 }

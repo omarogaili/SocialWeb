@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import ApiConfig from './ApiurlConfig';
+import Style from './style/Comment.module.css'
+import LikeButton from './Likebtn';
 export default function Comment() {
-    let [comment, setComment] = useState([]);
-    let [isOld, setIsOld] = useState(false);
+    const [comment, setComment] = useState('');
+    const [commentsList, setCommentsList] = useState([]);
+    const [errorMessage, setErrorMessage] = useState('');
     const [like, setLike] = useState(0);
     const [userId, setUserId] = useState(null);
     const apiUrl = ApiConfig();
-    useEffect (()=>{
-        const storedUserId =localStorage.getItem('userId');
+    useEffect(() => {
+        const storedUserId = localStorage.getItem('userId');
         setUserId(storedUserId);
-    },[]);
+    }, []);
     const CreateAnComment = async (e) => {
         e.preventDefault();
+        if(!comment || comment.trim() === '') {
+            setErrorMessage('Write something');
+            return;
+        }
         try {
             const response = await fetch(apiUrl.apiurl_comments, {
                 method: 'POST',
@@ -27,22 +34,37 @@ export default function Comment() {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const data = await response.json();
-            setComment(data.Comment);
-            setLike(data.Like);
+            const userdata = await response.json();
+            console.log(userdata);
+            setCommentsList([...commentsList, { userComment: comment, likes: like }]);
+            setComment('');
+            setLike(0); 
         } catch (error) {
             console.error('Error creating comment:', error);
         }
-    }
-    return(
-        <div>
-            <form onSubmit={CreateAnComment}>
-                <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
+    };
+    return (
+        <div className={Style.Container}>
+            <form onSubmit={CreateAnComment} className={Style.Form_Container}>
+                <input
+                    type="text"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                    placeholder="Skriv en kommentar..."
+                className={Style.Input_Field}
+                />
                 <button type="submit">Submit</button>
             </form>
-            <div>
-                <h3>Likes: {like}</h3>
-                <button onClick={() => setLike(like + 1)}>Like</button>
+            <div className={Style.Old_Comment}>
+                {commentsList.length > 0 ? (
+                    commentsList.map((c, index) => (
+                        <p key={index}>{c.userComment} (Likes: {c.likes})</p>
+                    ))
+                ) : (
+                    <p >No comments yet.</p> 
+                )}
+                {errorMessage && <p className="error-message">{errorMessage}</p>}
+                <LikeButton like={like} setLike={setLike}/>
             </div>
         </div>
     );

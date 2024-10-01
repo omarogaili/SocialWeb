@@ -1,46 +1,21 @@
-// import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
+import Style from './style/Userinfo.module.css';
+import ProfileImage from '../assets/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-vector.jpg';
 
-// //! this component will be used to get the user information to render when ever we want.
-// export default function GetUserName(){
-//     const [apiUrl, setApiUrl]= useState('');
-//     const [users, setUsers]= useState([]);
-//     const [old, setOld]= useState(false);
-//     useEffect(() =>{
-//         const fetchConfig= async () =>{
-//             const response = await fetch('/config.json')
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             const data = await response.json();
-//             setApiUrl(data.apiurl_users);
-//         }
-//         fetchConfig();
-//     });
-//     console.log(`${apiUrl} from console`);
-//     useEffect(() => {
-//         getData();
+//! this component will be used to get the user information to render when ever we want.
+export default function GetUserName(){
+    const [userName, setUserName] = useState('');
 
-//     }, [apiUrl,old]);
-//     const getData = async () => {
-//         try {
-//             const response = await fetch(`${apiUrl}`);
-//             if (!response.ok) {
-//                 throw new Error(`HTTP error! status: ${response.status}`);
-//             }
-//             const data = await response.json();
-//             setUsers(data);
-//         } catch (error) {
-//             console.error('Error fetching data:', error);
-//         }
-//     };
-//     return(
-//         <div>
-//             {users.map((user, index) => (
-//                 <div key={index}>
-//                     <p>{user.userId}</p>
-//                     <p>{user.userName}</p>
-//                 </div>
-//             ))}
-//         </div>
-//     )
-// }
+    useEffect(() => {
+        const storedUserName = localStorage.getItem('userName');
+        if (storedUserName) {
+            setUserName(storedUserName);
+        }
+    }, []);
+    return(
+        <div className={Style.Main_Container}>
+            <img src= {ProfileImage}></img>
+            <h2>{userName}</h2>
+        </div>
+    )
+}
