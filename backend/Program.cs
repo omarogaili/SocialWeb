@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
 using backend;
+using backend.Endpoints;
+using backend.Endpoints;
 using Endpoints;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -19,7 +21,7 @@ internal class Program
         });
         builder.Services.AddCors(options =>
         {
-            options.AddPolicy("AllowAllOrigins", builder =>
+            options.AddPolicy("AllowReactApp", builder =>
             {
                 builder.AllowAnyOrigin()
                         .AllowAnyMethod()
@@ -28,6 +30,7 @@ internal class Program
         });
 
         builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<ICommentsServices, CommentSevice>();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -38,10 +41,11 @@ internal class Program
             app.UseSwagger();
             app.UseSwaggerUI();
         }
-        app.UseCors("AllowAllOrigins");
+        app.UseCors("AllowReactApp");
         app.UseHttpsRedirection();
         app.UseRouting();
         app.MapUserEndpoints();
+        app.MapCommentsEndpoints();
         app.Run();
     }
 }

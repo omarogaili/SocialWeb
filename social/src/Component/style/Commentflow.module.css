@@ -1,0 +1,18 @@
+.comment {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.commentItem {
+    background-color: #242830;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px; 
+    margin: 5px 0; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 70em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

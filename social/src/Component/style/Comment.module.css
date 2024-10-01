@@ -1,0 +1,51 @@
+.Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+.Form_Container{
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    justify-content: space-between;
+    border-radius: 6px;
+    width: 70em;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: rgba(13, 24, 39, 0.158);
+}
+.Input_Field{
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+}
+.Form_Container button{
+    padding: 12px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #094928;
+    color: white;
+    cursor: pointer;
+    
+}
+.Old_Comment{
+    display: flex;
+    flex-direction:  row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.Old_Comment button{
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.Likes{
+    padding: 6px;
+    color:whitesmoke;
+    text-align: center;
+    
+}

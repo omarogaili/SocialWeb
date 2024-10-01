@@ -86,3 +86,60 @@ packages/react-devtools-fusebox/dist
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
 packages/react-devtools-timeline/dist
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# Rider files
+.idea/
+
+# DotNet files
+project.lock.json
+project.fragment.lock.json
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.tlog
+
+# Rider project files
+*.sln.iml
+
+# NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+*.symbols.nupkg
+
+# Visual Studio Code
+.vscode/
+.history/
+
+# Logs
+*.log
+
+# Publish folder
+publish/
+
+# Coverage results
+coverage/
+
+# User secrets
+secrets.json
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Other
+*.pdb
+*.mdb
+*.xml

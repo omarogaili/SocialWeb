@@ -50,9 +50,17 @@ public static class UserEndpoints
     }
     static async Task<IResult> SignInAsync(SignInRequest request, IUserService userService)
     {
-        var user= userService.SignInQuery(request.userEmail, request.userPassword);
-        var userinfo= userService.GetUserById(request.userEmail);
-        return user.HasValue? Results.Ok(new UserResponse(user.Value, userinfo.Name,request.userEmail)) : Results.Unauthorized();
+        var user = userService.SignInQuery(request.userEmail, request.userPassword);
+        Console.WriteLine($"SignInQuery result for {request.userEmail}: {user.HasValue}");
+        if (user.HasValue)
+        {
+            var userinfo = userService.GetUserById(request.userEmail);
+            return Results.Ok(new UserResponse(user.Value, userinfo.Name, request.userEmail));
+        }
+        else
+        {
+            Console.WriteLine("Unauthorized: Invalid email or password");
+            return Results.Unauthorized();
+        }
     }
-
 }

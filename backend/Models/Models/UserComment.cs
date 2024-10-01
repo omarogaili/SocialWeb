@@ -9,7 +9,6 @@ namespace backend
         public int Id { get; set; }
         public string Comment { get; set; }
         public int Likes { get; set; }
-
         [ForeignKey("User")]
         public int UserId { get; set; }
         public virtual User User { get; set; }

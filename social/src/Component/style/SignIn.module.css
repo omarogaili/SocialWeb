@@ -1,0 +1,125 @@
+.Login_Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: 30em;
+    padding: 20px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.Login_Box{
+    padding: 40px;
+    border-radius: 8px;
+    color: white;
+    width: 300px;
+    position: relative;
+}
+.Login_Container::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url("../../assets/Soical Logo.png");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    box-shadow: inset 0 0 0 50vw rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+
+.Login_Box h2 {
+    margin-bottom: 20px;
+    
+}
+
+.Input_Field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.Password_Container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.Password_Input {
+    width: 100%;
+    padding-right: 40px;
+    /* Add some padding to make space for the eye icon */
+    box-sizing: border-box;
+    /* Ensures padding is included in the element's width */
+}
+
+.Password_toggle_icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.Submit_btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.Forgot_password {
+    margin-top: 10px;
+}
+
+.Forgot_password a {
+    color: white;
+    text-decoration: none;
+}
+
+.Forgot_password a:hover {
+    color: rgb(1, 2, 15);
+}
+
+.Social_login {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.Social_btn {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.Social_btn.google {
+    background-color: #DB4437;
+    color: white;
+}
+
+.Social_btn.facebook {
+    background-color: #4267B2;
+    color: white;
+}
+
+.Social_btn.apple {
+    background-color: rgb(253, 253, 253);
+    color: rgb(12, 0, 0);
+}

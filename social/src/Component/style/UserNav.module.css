@@ -1,0 +1,22 @@
+.nav_list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+}
+.nav_list a{
+    color:antiquewhite;
+    text-decoration: none;
+    font-size: 16px;
+}
+.nav_list a:hover{
+    background-color: rgb(22, 36, 61);
+}
+.Nav_Container{
+    display: flex;
+    flex-direction: row;
+    padding: 2em;
+}
+.Icons{
+    font-size: 20px;
+}
