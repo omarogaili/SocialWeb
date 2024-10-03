@@ -1,7 +1,7 @@
 {
-    "apiurl_users": "https://192.168.1.99:7168/api/user",
-    "apiurl_signin": "https://192.168.1.99:7168/api/login",
-    "apiurl_signup": "https://192.168.1.99:7168/api/Signup",
-    "apiurl_comments": "https://192.168.1.99:7168/api/comments",
-    "apiurl_getcomments": "https://192.168.1.99:7168/api/getcomments"
+    "apiurl_users": "https://192.168.xx.xx:7168/api/user",
+    "apiurl_signin": "https://192.168.xx.xx:7168/api/login",
+    "apiurl_signup": "https://192.168.xx.xx:7168/api/Signup",
+    "apiurl_comments": "https://192.168.xx.xx:7168/api/comments",
+    "apiurl_getcomments": "https://192.168.xx.xx:7168/api/getcomments"
 }
