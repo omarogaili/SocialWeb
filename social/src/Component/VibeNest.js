@@ -7,7 +7,6 @@ import LikeButton from './Likebtn';
 
 //! this component will be used to get the user information to render when ever we want.
 export default function GetUserName(){
-    // const [apiUrl, setApiUrl]= useState('');
     const [users, setUsers]= useState([]);
     const [old, setOld]= useState(false);
     const apiUrl = ApiUrlConfig();

@@ -3,6 +3,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,9 +21,18 @@ namespace backend
             _hashAlgorithm = new PasswordHasher<User>();
             _conectionString = configuration.GetConnectionString("DefaultConnection");
         }
+        private bool IsValidEmail(string email)
+        {
+            string emailRegex = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+            return Regex.IsMatch(email, emailRegex);
+        }
+        private bool IsValidPassword(string password)
+        {
+            return password.Length >= 8 ;
+        }
         public User GetUserById(string userEmail)
         {
-            using (var connection= new MySqlConnection(_conectionString))
+            using (var connection = new MySqlConnection(_conectionString))
             {
                 connection.Open();
                 string query = "SELECT * FROM Users WHERE Email = @email";
@@ -47,6 +57,14 @@ namespace backend
         }
         public async Task<User> AddUser(User user)
         {
+            if(!IsValidEmail(user.Email))
+            {
+                throw new ArgumentException("Invalid email address");
+            }
+            if(!IsValidPassword(user.Password))
+            {
+                throw new ArgumentException("Invalid password. Password should be at least 8 characters long");
+            }
             user.Password = _hashAlgorithm.HashPassword(user, user.Password);
             _context.Users.Add(user);
             _context.SaveChanges();
@@ -54,6 +72,11 @@ namespace backend
         }
         public void UpdateUser(User user)
         {
+            if(!IsValidEmail(user.Password))
+            {
+                throw new ArgumentException("Invalid Password! at least 8 characters required");
+            }
+
             user.Password = _hashAlgorithm.HashPassword(user, user.Password);
             _context.Users.Update(user);
             _context.SaveChanges();
@@ -90,7 +113,7 @@ namespace backend
                         {
                             if (reader.Read())
                             {
-                                var storedPasswordHash = reader["Password"].ToString(); 
+                                var storedPasswordHash = reader["Password"].ToString();
                                 var userId = (int)reader["Id"];
                                 if (VerifyPassword(new User { Password = storedPasswordHash! }, password))
                                 {
@@ -106,7 +129,7 @@ namespace backend
                 }
             }
             Console.WriteLine("Login Failed");
-            return null; 
+            return null;
         }
     }
 }
