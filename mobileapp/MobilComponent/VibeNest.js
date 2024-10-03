@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 export default function Commentflow() {
     const [comments, setComments] = useState([]); 
-    const apiurl = "http://192.168.1.99:5075/api/getcomments"; 
+    const apiurl = "http://192.168.xx.xx:5075/api/getcomments"; 
     useEffect(() => {
         getComments();
     }, []);
