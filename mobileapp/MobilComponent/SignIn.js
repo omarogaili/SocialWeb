@@ -8,7 +8,7 @@ export default function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const apiUrl = "http://192.168.1.99:5075/api/login";
+    const apiUrl = "http://192.168.xx.xx:5075/api/login";
     const postData = async () => {
         setErrorMessage('');
         if (!email || email.trim() === '') {
