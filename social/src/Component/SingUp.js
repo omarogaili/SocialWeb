@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ApiConfig from './ApiurlConfig';
 import { useNavigate,Link } from "react-router-dom";
+import Style from './style/SignIn.module.css';
+
+
 export default function SignupComponent() {
     const navigate = useNavigate();
     const [name, setName] = useState('');
@@ -44,13 +47,34 @@ export default function SignupComponent() {
         }
     };
     return (
-        <div>
-            <legend>Signup</legend>
-            <form onSubmit={handleSingup}>
-                <input type="text" placeholder="Username" value={name} onChange={(e)=>{setName(e.target.value)}}  required  />
-                <input type="text" placeholder="Email" value={email} onChange={(e)=> {setEmail(e.target.value)}} required  />
-                <input type="password" placeholder="Password" value={password} onChange={(e)=> {setPassword(e.target.value)}} required />
-                <button type="submit">Sign Up</button>
+        <div className={Style.Login_Container}>
+            <form onSubmit={handleSingup} className={Style.Login_Box}>
+                <legend>Signup</legend>
+                <input 
+                    type="text" 
+                    placeholder="Username" 
+                    className={Style.Input_Field}
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                    required 
+                />
+                <input 
+                    type="text" 
+                    placeholder="Email" 
+                    className={Style.Input_Field}
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    required 
+                />
+                <input 
+                    type="password" 
+                    placeholder="Password" 
+                    className={Style.Input_Field}
+                    value={password} 
+                    onChange={(e) => setPassword(e.target.value)} 
+                    required 
+                />
+                <button type="submit" className={Style.Submit_btn}>Sign Up</button>
             </form>
         </div>
     );

@@ -26,6 +26,26 @@
     "Summary": "Successfully created a new user"
   },
   {
+    "ContainingType": "backend.Endpoints.CommentsEndpoints",
+    "Method": "GetComments",
+    "RelativePath": "api/getcomments",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "comments"
+    ],
+    "Summary": "Get all comments"
+  },
+  {
     "ContainingType": "Endpoints.UserEndpoints",
     "Method": "SignInAsync",
     "RelativePath": "api/login",
