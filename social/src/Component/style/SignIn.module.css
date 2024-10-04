@@ -123,3 +123,53 @@
     background-color: rgb(253, 253, 253);
     color: rgb(12, 0, 0);
 }
+
+@media screen and (max-width: 750px) {
+    .Login_Container {
+      width: 90%;
+      top: 20%;
+      left: 5%;
+      padding: 10px;
+    }
+  
+    .Login_Box {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .Input_Field {
+      padding: 8px;
+      margin: 8px 0;
+    }
+  
+    .Password_Input {
+      padding-right: 30px;
+    }
+  
+    .Password_toggle_icon {
+      font-size: 1em;
+    }
+  
+    .Submit_btn {
+      padding: 8px;
+    }
+  
+    .Social_btn {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+  
+    .Social_login {
+      margin-top: 15px;
+    }
+  
+    .Forgot_password {
+      margin-top: 8px;
+    }
+  
+    .Forgot_password a {
+      font-size: 14px;
+    }
+  }
+  

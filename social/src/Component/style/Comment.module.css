@@ -1,3 +1,11 @@
+.App_Header {
+    width: 100%;
+    background-color: #282c34;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .Container{
     display: flex;
     flex-direction: column;
@@ -49,3 +57,40 @@
     text-align: center;
     
 }
+@media screen and (max-width: 1200px) {
+    .Container {
+      gap: 10px;
+    }
+  
+    .Form_Container {
+      flex-direction: column;
+      width: 100%;
+      padding: 20px;
+      margin: 10px auto;
+      gap: 10px;
+    }
+  
+    .Input_Field {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .Form_Container button {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .Old_Comment {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .Old_Comment button {
+      margin-top: 10px;
+    }
+  
+    .Likes {
+      padding: 4px;
+    }
+  }
+  

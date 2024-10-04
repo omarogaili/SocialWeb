@@ -3,15 +3,42 @@
     background-color: #282c34;
     padding: 20px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 .App_Logo {
-    height: 100px;
+    height: 70px;
     border-radius: 50%;
+    margin-right: 20px;
 }
-.Main{
+
+.Main {
     padding: 20px;
-    width: 70em;
+    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
+
+@media screen and (max-width: 750px) {
+    .App_Header {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .App_Logo {
+      height: 50px;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .Main {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  }
+  
