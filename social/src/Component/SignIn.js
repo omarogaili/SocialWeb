@@ -19,11 +19,14 @@ const SignInComponent = () => {
     setShowPassword(!showPassword);
   };
   const apiUrl = ApiConfig();
+  // emailRegex used for user input validation 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //! postData sending email and password to the API endpoint first i checked if the email and the password is not empty and then sending the post 
+  //! response  as content-Type json. 
   const postData = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-    if(!email || email.trim() == ''){
+    if(!email || email.trim() === ''){
       setErrorMessage('Email is required.');
       return;
     }
@@ -31,7 +34,7 @@ const SignInComponent = () => {
       setErrorMessage('Invalid email format.');
       return;
     }
-    if(!password || password.trim() == ''){
+    if(!password || password.trim() === ''){
       setErrorMessage('Password is required.');
       return;
     }
@@ -50,17 +53,19 @@ const SignInComponent = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       } else {
         const data = await response.json();
+        // here i store the user id in localStorage in setUserInformation.  i will use this information in another components 
         if (data.userId !== undefined) {
           setId(data.userId);
           localStorage.setItem('userId', data.userId);
           localStorage.setItem('userName', data.userName);
           console.log(data.userId);
+          //this can be used for global state
           setUserInformation({
             userId: data.userId,
             userName: data.userName,
             userEmail: data.userEmail
           });
-          navigate('/VibeNest', { state: { userId: data.userId, userName: data.userName } });
+          // navigate('/VibeNest', { state: { userId: data.userId, userName: data.userName } });
         } else if (!data.success) {
           setErrorMessage(data.message);
         }

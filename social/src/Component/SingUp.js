@@ -55,23 +55,3 @@ export default function SignupComponent() {
         </div>
     );
 }
-
-
-
-
-
-
-
-
-        // const [apiUrl, setApiUrl] = useState();
-        // useEffect(() => {
-        //     const fetchConfig = async () => {
-        //         const response = await fetch('/config.json');
-        //         if (!response.ok) {
-        //             throw new Error(`HTTP error! status: ${response.status}`);
-        //         }
-        //         const data = await response.json();
-        //         setApiUrl(data.apiurl_signup);
-        //     }
-        //     fetchConfig();
-        // });

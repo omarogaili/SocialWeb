@@ -4,9 +4,9 @@ import style from './style/Commentflow.module.css'
 import LikeButton from './Likebtn';
 
 export default function Comments() {
-    let [comment, setcomment] = useState([]);
+    const [comment, setcomment] = useState([]);
     const [username, setUserName]= useState([]);
-    let [isOld, setIsOld] = useState(false);
+    const [isOld, setIsOld] = useState(false);
     const [like, setLike] = useState(0);
     const apiUrl = ApiConfig();
     const getComment =useCallback( async () => {

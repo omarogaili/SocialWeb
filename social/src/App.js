@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Component/header';
 import SignInComponent from './Component/SignIn'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Account from "./Component/account";
+import Account from "./Component/VibeNest";
 import SignUp from './Component/SingUp';
 import Profile from "./Pages/Profile";
 import { UserProvider } from './Component/Context/UserContext';

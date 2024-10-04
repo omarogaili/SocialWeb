@@ -3,6 +3,7 @@ export default function Signout() {
     const navigate = useNavigate();
     const handleSignout = () => {
         localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
         navigate('/');
     };
     return (
