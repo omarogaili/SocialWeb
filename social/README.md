@@ -1,7 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## local hosting 
+**`chang the config.json in public folder. write your IP address on all the API links to make a connection to the server`**<br>
+[config.json](./public/config.json). 
 ## Available Scripts
 
 In the project directory, you can run:

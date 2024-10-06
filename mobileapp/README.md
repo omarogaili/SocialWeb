@@ -1,6 +1,14 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## local hosting 
+**`write your IP address when we fetch data from the server. write your IP address here`**<br>
+
+![Apirul config](image.png)<br>
+make the changes on this components:<br>
+
+[SignIn](./MobilComponent/SignIn.js).<br>
+[VibeNest](./MobilComponent/VibeNest.js).
 
 ## Available Scripts
 
